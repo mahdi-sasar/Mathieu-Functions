@@ -4,7 +4,9 @@ and n values. Mathieu functions are a class of very interesting and useful, but 
 finnicky equations. They come about as the solutions to the following differential
 equation:
 $$
+\begin{equation}
 \frac{d^2}{dx^{2}} \psi(x) +(a-2q\cos(2x))\psi(x)=0
+\end{equation}
 $$
 The problem that this package deals with is specifically as follows:
 I need to plot and use periodic Mathieu functions with unusually large $q$

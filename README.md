@@ -44,7 +44,7 @@ The great efficiency of the Julia language gave rise to a pretty handy tool here
 helped me greatly in my own calculations. I hope it can aid you in your projects as well!
 
 As time goes on, I will pour in more technical details about the project and how the whole
-thing was developed in the end. It is a work in progress.
-
+thing was developed in the end. It is a work in progress. So be sure to check in from time
+to time and leave a star on the repo, if you have found this useful.
 
 

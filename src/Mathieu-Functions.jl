@@ -4,7 +4,9 @@ using LinearAlgebra
 function CharA(n::Int64, q::Float64)
     if n%2 == 0
         m = floor(Int, (n/2) + 1)
-        Nmax = max(50*m, 10*sqrt(abs(q)))  
+        # Nmax is an arbitrary definition at this point.
+        # Nmax = max(50+m, 10*sqrt(abs(q)))  
+        Nmax = 2*m
         NmaxInt = floor(Int, Nmax)
         B = zeros(NmaxInt, NmaxInt)
         B[1, 1] = 0.
@@ -26,7 +28,8 @@ function CharA(n::Int64, q::Float64)
         return c[m]
     elseif n%2 == 1
         m = floor(Int, (n+1)/2.)
-        Nmax = max(50*m, 10*sqrt(abs(q)))  
+        # Nmax = max(50+m, 10*sqrt(abs(q)))  
+        Nmax = 2*m
         NmaxInt = floor(Int, Nmax)
         B = zeros(NmaxInt, NmaxInt)
         B[1, 1] = (1.)*(q + 1.)
@@ -56,7 +59,8 @@ function CharB(n::Int64, q::Float64)
     end
     if (n%2 == 0 && n != 0)
         m = floor(Int, (n/2))
-        Nmax = max(50*m, 10*sqrt(abs(q)))   #This is an arbitrary limit. However, there is a very strong intuitive reasoning behind the square root approach.
+        # Nmax = max(50+m, 10*sqrt(abs(q)))   
+        Nmax = 2*m
         NmaxInt = floor(Int, Nmax)
         B = zeros(NmaxInt, NmaxInt)
         B[1, 1] = 4.
@@ -78,7 +82,8 @@ function CharB(n::Int64, q::Float64)
         return c[m]
     elseif n%2 == 1
         m = floor(Int, (n+1)/2.)
-        Nmax = max(50*m, 10*sqrt(abs(q)))   #This is an arbitrary limit. However, there is a very strong intuitive reasoning behind the square root approach.
+        # Nmax = max(50+m, 10*sqrt(abs(q)))
+        Nmax = 2*m
         NmaxInt = floor(Int, Nmax)
         B = zeros(NmaxInt, NmaxInt)
         B[1, 1] = 1. - q
@@ -119,7 +124,6 @@ function ce(m::Int64, q::Float64, x::AbstractVector{Float64})
             A = A ./N
             i += 2
         end
-        #println(A)
         t = zeros(length(x))
         for j in 2:length(A)
             t += A[j]*cos.((j-2)*x)
@@ -140,7 +144,6 @@ function ce(m::Int64, q::Float64, x::AbstractVector{Float64})
             A = A ./N
             i += 2
         end
-        #println(A)
         t = zeros(length(x))
         for j in 1:length(A)
             t += A[j]*cos.((j)*x)
@@ -166,7 +169,6 @@ function se(m::Int64, q::Float64, x::AbstractVector{Float64})
             B = B ./N
             i += 2
         end
-        #println(B)
         t = zeros(length(x))
         for j in 2:length(B)
             t += B[j]*sin.((j)*x)
@@ -195,11 +197,3 @@ function se(m::Int64, q::Float64, x::AbstractVector{Float64})
         return t
     end
 end
-
-
-x = range(-pi, pi, 1000)
-#plot(x, se(70, -2238.607, x))
-#savefig("my_plot.svg")
-plot(x, [ce(7, -2238.607,x), se(7, -2238.607, x)])
-savefig("my_plot2.svg")
-   

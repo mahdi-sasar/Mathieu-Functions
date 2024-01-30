@@ -32,14 +32,19 @@ values in Mathematica. It can, of course, be used for all values of the $q$ para
 the added benefit of beating Mathematica in plotting them for $q$ values that stymies
 Mathematica.
 
-There are some other Julia libraries already available that calculate the characteristic
-values for difference $q$ values as well. Please be sure to check them out as well:
-[[https://github.com/BBN-Q/MathieuFunctions.jl]]
+After writing these functions, I realized that there are some other Julia libraries
+already available that calculate the characteristic values for difference $q$ values as
+well. Please be sure to check them out as well:
+* [BBN-Q's Mathieu function library](https://github.com/BBN-Q/MathieuFunctions.jl)
+* [jebej's Mathieu function library ](https://github.com/jebej/Mathieu.jl)
 
+This calculation follows the brilliant textbook of Morse & Feshbach and the [*Digital
+Library of Mathematical Functions*](https://dlmf.nist.gov/28.2).
+The great efficiency of the Julia language gave rise to a pretty handy tool here that
+helped me greatly in my own calculations. I hope it can aid you in your projects as well!
 
-This calculation follows the brilliant textbook of Morse & Feshbach (I mean, who
-else?!). Morse & Feshbach coupled with the great efficiency of the Julia language have
-given rise to a pretty handy tool here that helped me greatly in my own calculations. I
-hope it may aid you in yours!
+As time goes on, I will pour in more technical details about the project and how the whole
+thing was developed in the end. It is a work in progress.
+
 
 

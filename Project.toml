@@ -1,0 +1,7 @@
+name = "Mathieu-Functions"
+uuid = "9ccba453-9309-4248-aa10-8731369c4a7d"
+authors = ["Mahdi Sasar" <mahdi.sasar@icho.edu.pl>]
+version = "1.0"
+
+[deps]
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"

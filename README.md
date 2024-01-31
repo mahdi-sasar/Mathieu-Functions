@@ -1,3 +1,5 @@
+# Update
+The code presented here has now been merged into [BBN-Q's Mathieu function library](https://github.com/BBN-Q/MathieuFunctions.jl) and is accessible in Julia lang's general registry.
 # Mathieu-Functions
 This is a Julia language library for computing periodic Mathieu functions with arbitrary q
 and n values. Mathieu functions are a class of very interesting and useful, but incredibly
